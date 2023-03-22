@@ -1,0 +1,8 @@
+<div class="my-container">
+    <div class="latest">
+        <h3>Latest</h3>
+        {% for site in sites %}
+            <a href="{{ site.get_absolute_url }}">{{ site.name }}</a>
+        {% endfor %}
+    </div>
+</div>

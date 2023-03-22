@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load scrape_templates %}
 
 {% comment %} CSS {% endcomment %}
 {% block link %}
@@ -13,14 +14,22 @@
 {% block content %}
     {% include "scrapper/section/navbar.html" %}
 
-    <div class="my-container">
-        <ul class="my-sitelist">
-            {% for site in sites %}
-                <li class="my-siteitem">
-                    <a href="{{ site.get_absolute_url }}">{{ site.url }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+    <div class="my-row">
+        <div class="my-left">
+            {% latest %}
+        </div>
+        <div class="my-center">
+            <div class="my-container">
+                <ul class="my-sitelist">
+                    {% for site in sites %}
+                        <li class="my-siteitem">
+                            <a href="{{ site.get_absolute_url }}">{{ site.url }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="my-right"></div>
     </div>
 {% endblock content %}
 

@@ -27,9 +27,9 @@ class SiteCreateView(generics.CreateAPIView):
 
    
 class SiteUpdateView(generics.UpdateAPIView):
-    serializer_class = serializers.SiteSerializer
+    serializer_class = serializers.SiteStatusUpdateSerializer
     queryset = Site.objects.all()
-    lookup_field = "url"
+    lookup_field = "id"
 
 
 class DataListView(generics.ListAPIView):
