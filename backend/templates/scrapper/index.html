@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} CSS {% endcomment %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/scrapper.css' %}">
+{% endblock link %}
+
+{% comment %} TITLE {% endcomment %}
+{% block title %}Scrapper{% endblock title %}
+
+{% comment %} CONTENT {% endcomment %}
+{% block content %}
+    {% include "scrapper/section/navbar.html" %}
+
+    <div class="my-container">
+        <ul class="my-sitelist">
+            {% for site in sites %}
+                <li class="my-siteitem">
+                    <a href="{{ site.get_absolute_url }}">{{ site.url }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
+
+{% comment %} SCRIPT {% endcomment %}
+{% block script %}
+    <script src="{% static 'js/scrapper.js' %}"></script>
+{% endblock script %}

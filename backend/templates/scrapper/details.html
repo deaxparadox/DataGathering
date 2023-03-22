@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} CSS {% endcomment %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/scrapper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+
+{% endblock link %}
+
+{% comment %} TITLE {% endcomment %}
+{% block title %}Site Detail{% endblock title %}
+
+{% comment %} CONTENT {% endcomment %}
+{% block content %}
+    {% include "scrapper/section/navbar.html" %}
+
+    <div class="my-detail-container">
+
+            <label for="site-name">Name : </label>
+            <h3 id="site-name">{{ site_detail.name }}</h3>
+            <br>
+
+            <label for="site-domain">Domain : </label>
+            <h5 id="site-domain">{{ site_detail.domain }}</h5>
+            <br>
+
+            <label for="site-url">URL : </label>
+            <h5 id="site-url">{{ site_detail.url }}</h5>
+            <br>
+            
+            <label for="site-status">Status : </label>
+            <h5 id="site-status">{{ site_detail.status }}</h5>
+    </div>
+{% endblock content %}
+
+{% comment %} SCRIPT {% endcomment %}
+{% block script %}
+    <script src="{% static 'js/scrapper.js' %}"></script>
+{% endblock script %}

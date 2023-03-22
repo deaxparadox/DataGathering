@@ -1,0 +1,16 @@
+.my-detail-container {
+    background-color: var(--color2);
+    margin: 30px;
+    padding: 30px;
+    padding-left: 60px;
+    border-radius: 15px;
+}
+.my-detail-container label {
+    width: 70px;
+    display: inline-block;
+    text-align: right;
+}
+.my-detail-container h3,h5 {
+    display: inline;
+    margin-left: 10px;
+}
